@@ -1,15 +1,23 @@
+// @flow
 import React from 'react';
 import LoginBox from './children/login_box';
 import './login_page.css';
 
-const loginBoxOptions = {
-  boxWidth: 500,
+type LoginBoxOptionsType = {
+  boxWidth: number,
+  bodyPadding: number,
+  bodyColor: string,
+  headerColor: string,
+}
+
+const loginBoxOptions: LoginBoxOptionsType = {
+  boxWidth: 400,
   bodyPadding: 20,
   bodyColor: '#FFF',
-  headerColor: '#81D4FA'
+  headerColor: '#4FC3F7'
 };
 
-const LoginPage = (props) => (
+const LoginPage = (props: any) => (
   <LoginBox className="login-page" {...loginBoxOptions} >
     { props.children }
   </LoginBox>

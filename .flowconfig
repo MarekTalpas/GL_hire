@@ -1,14 +1,18 @@
 [ignore]
-.*/node_modules/fbjs/.*
+.*/node_modules/.**
+.*/material-ui/.*
 
 [include]
 
 [libs]
+flow-typed
 
 [options]
 module.name_mapper.extension='css' -> '<PROJECT_ROOT>/flow/CSSModule.js.flow'
 module.name_mapper.extension='png' -> '<PROJECT_ROOT>/flow/WebpackAsset.js.flow'
 module.name_mapper.extension='jpg' -> '<PROJECT_ROOT>/flow/WebpackAsset.js.flow'
+module.name_mapper='\(react-redux\)' -> '<PROJECT_ROOT>/flow/GeneralStub.js.flow'
+module.name_mapper='\(material-ui/.*\)' -> '<PROJECT_ROOT>/flow/GeneralStub.js.flow'
 esproposal.class_static_fields=enable
 esproposal.class_instance_fields=enable
 

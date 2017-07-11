@@ -3,6 +3,12 @@
 :root {
   --left-translate: 50%;
   --top-translate: 50%;
+  --login-btn-width: 120px;
+  --login-btn-offset: 20px;
+  --login-header-width: 80%;
+  --error-font-size: 0.75rem;
+  --error-width: 220px;
+  --error-line-heigth: 1rem;
 }
 
 .login-box {
@@ -18,15 +24,22 @@
 }
 
 .login-box__header-logo {
-  width: 80%;
+  width: var(--login-header-width);
 }
 
-  /*&__header img {
-    width: 80%;
-    height: 10px;
-  }*/
+.error_btn_wrapper {
+  display: flex;
+}
 
-/*.login-box__header-logo {
-  width: 80%;
-  height: 10px;
-}*/
+.login-box__btn {
+  width: var(--login-btn-width);
+  margin-left: var(--login-btn-offset);
+}
+
+.login-box__error {
+  width: var(--error-width);
+  font-size: var(--error-font-size);
+  color: var(--errormsgs-red);
+  line-height: var(--error-line-heigth);
+  word-wrap: break-word;
+}
