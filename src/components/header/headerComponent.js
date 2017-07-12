@@ -1,2 +1,14 @@
+import React, { Component } from 'react';
+import './headerComponent.css';
 
-//klkk
+class HeaderComponent extends Component {
+  render() {
+    return (
+      <div className='header'>
+        some component
+      </div>
+    );
+  }
+}
+
+export default HeaderComponent;
