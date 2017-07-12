@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 //import { Router, Route, Switch } from 'react-router-dom';
 
-import LoginPage from './login_page/login_page';
+//import LoginPage from './login_page/login_page';
 import { authUser, fetchLocations } from '../../API/fetch';
 
 import Sidebar from './sidebar/sidebar';
@@ -18,7 +18,7 @@ export default class App extends Component {
   render() {
     return (
       <div className="app">
-        <LoginPage />
+        {/*<LoginPage />*/}
         <Sidebar />
         <HeaderComponent />
       </div>
