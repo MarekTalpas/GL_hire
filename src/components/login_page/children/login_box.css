@@ -1,21 +1,8 @@
-@import '../../../common/colors.css';
-
-:root {
-  --left-translate: 50%;
-  --top-translate: 50%;
-  --login-btn-width: 120px;
-  --login-btn-offset: 20px;
-  --login-header-width: 80%;
-  --error-font-size: 0.75rem;
-  --error-width: 220px;
-  --error-line-heigth: 1rem;
-}
-
 .login-box {
   margin: auto;
   position: absolute;
-  top: var(--left-translate);
-  left: var(--left-translate);
+  top: 50%;
+  left: 50%;
   transform: translate(-50%, -50%);
 }
 
@@ -24,7 +11,7 @@
 }
 
 .login-box__header-logo {
-  width: var(--login-header-width);
+  width: 80%;
 }
 
 .error_btn_wrapper {
@@ -32,14 +19,14 @@
 }
 
 .login-box__btn {
-  width: var(--login-btn-width);
-  margin-left: var(--login-btn-offset);
+  width: 120px;
+  margin-left: 20px;
 }
 
 .login-box__error {
-  width: var(--error-width);
-  font-size: var(--error-font-size);
-  color: var(--errormsgs-red);
-  line-height: var(--error-line-heigth);
+  width: 220px;
+  font-size: 0.75rem;
+  color: #F44336;
+  line-height: 1rem;
   word-wrap: break-word;
 }
