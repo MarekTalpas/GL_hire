@@ -10,6 +10,7 @@ class HeaderComponent extends Component {
         <div className='headerUser'>
           <UserComponent />
         </div>
+        <h2 className='typeIntw'>Edit Interview</h2>
       </div>
     );
   }

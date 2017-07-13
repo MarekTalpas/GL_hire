@@ -7,6 +7,7 @@ import { authUser, fetchLocations } from '../../API/fetch';
 
 import Sidebar from './sidebar/sidebar';
 import HeaderComponent from './header/headerComponent';
+import InterviewComponent from './interview/interviewComponent';
 
 injectTapEventPlugin();
 
@@ -21,6 +22,7 @@ export default class App extends Component {
         {/*<LoginPage />*/}
         <Sidebar />
         <HeaderComponent />
+        <InterviewComponent />
       </div>
     );
   }

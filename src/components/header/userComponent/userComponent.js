@@ -13,6 +13,8 @@ import {
   indigo900,
 } from 'material-ui/styles/colors';
 
+import './userComponent.css';
+
 class UserComponent extends Component {
   render() {
     const style = {
@@ -21,11 +23,6 @@ class UserComponent extends Component {
 
     const userStyle = {
       textTransform: 'capitalize'
-    };
-
-    const tagStyle = {
-      marginBottom: 5,
-      marginLeft: 20
     };
 
     return (
@@ -46,7 +43,7 @@ class UserComponent extends Component {
               }
             >
               Johny Cash
-              <FaArrowRight style={tagStyle} />
+              <FaArrowRight className='faIcon' />
             </ListItem>
           </List>
         </MuiThemeProvider>

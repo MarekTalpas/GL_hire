@@ -1,0 +1,9 @@
+.faIcon {
+  margin-bottom: 5px;
+  margin-left: 20px;
+}
+
+.faIcon:hover {
+  cursor: pointer;
+  color: red;
+}
