@@ -1,0 +1,11 @@
+.header {
+  width: 100%;
+  height: 125px;
+  background-color: #00BCD4;
+  position: relative;
+}
+
+.headerUser {
+  position: absolute;
+  right: 2%;
+}
