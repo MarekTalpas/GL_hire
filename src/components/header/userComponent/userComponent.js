@@ -18,11 +18,11 @@ import './userComponent.css';
 class UserComponent extends Component {
   render() {
     const style = {
-      margin: 5
+      margin: 5,
     };
 
     const userStyle = {
-      textTransform: 'capitalize'
+      textTransform: 'capitalize',
     };
 
     return (
@@ -47,7 +47,7 @@ class UserComponent extends Component {
             </ListItem>
           </List>
         </MuiThemeProvider>
-        
+
       </div>
       );
   }

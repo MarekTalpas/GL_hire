@@ -20,7 +20,7 @@ class InterviewLocation extends Component {
   render() {
     return (
       <MuiThemeProvider>
-        <SelectField 
+        <SelectField
           floatingLabelText = 'Location'
           floatingLabelFixed={true}
           hintText = 'Choose location'

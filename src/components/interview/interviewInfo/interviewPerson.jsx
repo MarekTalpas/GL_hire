@@ -20,7 +20,7 @@ class InterviewPerson extends Component {
   render() {
     return (
       <MuiThemeProvider>
-        <SelectField 
+        <SelectField
           floatingLabelText='Person'
           floatingLabelFixed={true}
           hintText='Choose person'

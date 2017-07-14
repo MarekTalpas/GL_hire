@@ -42,8 +42,8 @@ class InterviewCandidate extends Component {
             {this.renderTextField('text', 'Email', 'Incorrect format', 'Email')}
             {this.renderTextField('text', 'Skype', 'Incorrect format', 'Skype')}
             <CandidatePosition />
-            <ButtonComponent buttonText='Attach CV' />
-          </List>         
+            <ButtonComponent buttonText='attach cv' />
+          </List>
         </MuiThemeProvider>
       </div>
     )
