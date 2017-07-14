@@ -1,0 +1,58 @@
+{
+	"candidates": [{
+			"id": 1,
+			"data": {
+				"firstName": "Jackie",
+				"lastName": "Chan",
+				"phone": "111",
+				"email": "jackie@email.com",
+				"skype": "skype1",
+				"position": "PROJECT MANAGER"
+			}
+		},
+		{
+			"id": 2,
+			"data": {
+				"firstName": "Steven",
+				"lastName": "Seagal",
+				"phone": "222",
+				"email": "steven@email.com",
+				"skype": "skype2",
+				"position": "ARCHITECT"
+			}
+		},
+		{
+			"id": 3,
+			"data": {
+				"firstName": "Jim",
+				"lastName": "Carrey",
+				"phone": "333",
+				"email": "jim@email.sk",
+				"skype": "skype3",
+				"position": "PROGRAMMER"
+			}
+		},
+		{
+			"id": 4,
+			"data": {
+				"firstName": "Hugh",
+				"lastName": "Laurie",
+				"phone": "444",
+				"email": "hugh@email.sk",
+				"skype": "skype4",
+				"position": "ORACLE SPECIALIST"
+			}
+		},
+		{
+			"id": 5,
+			"data": {
+				"firstName": "Tom",
+				"lastName": "Hanks",
+				"phone": "555",
+				"email": "email@email.sk",
+				"skype": "skype5",
+				"position": "TESTER"
+			}
+		}
+	]
+}

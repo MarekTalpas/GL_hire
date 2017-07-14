@@ -1,10 +1,8 @@
-@import './common/colors.css';
-
 body {
   height: 100%;
   margin: 0;
   padding: 0;
-  background-color: var(--hiregl-white);
+  background-color: #FAFAFA;
   color: #000;
   font-family: 'Roboto', sans-serif;
   font-size: 16px;
