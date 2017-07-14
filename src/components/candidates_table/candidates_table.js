@@ -13,7 +13,7 @@ import CandidatesBodyRow from './children/candidates_body_row';
 import './candidates_table.css';
 
 const tableStyle = {
-  width: 'calc(100% - 350px)',
+  width: 'calc(100% - 410px)',
   backgroundColor: '#FAFAFA',
 };
 
@@ -36,7 +36,11 @@ class CandidateTable extends Component {
     console.log('store: ', store);
     return (
       <MuiThemeProvider>
-        <Table style={tableStyle} className="candidates-table">
+        <Table
+          fixedHeader={false}
+          style={tableStyle}
+          className="candidates-table"
+        >
           <TableHeader className="candidates-table__header">
             <CandidatesHeaderRow />
           </TableHeader>

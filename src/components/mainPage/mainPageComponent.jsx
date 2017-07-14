@@ -7,7 +7,7 @@ class MainPageComponent extends Component {
     return (
       <div>
         <Sidebar />
-        <HeaderComponent/>
+        <HeaderComponent />
       </div>
     );
   }

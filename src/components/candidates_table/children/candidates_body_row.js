@@ -30,7 +30,7 @@ const CandidatesRow = ({
   <TableRow className="table-row">
     <TableRowColumn
       className="table-row__column"
-      style={{ width: '8%', 'border-bottom': '1px solid #fafafa' }}
+      style={{ width: '10%', borderBottom: '1px solid #fafafa' }}
     >
       <Avatar
         className="table-row__avatar"
@@ -39,19 +39,36 @@ const CandidatesRow = ({
         size={60}
       />
     </TableRowColumn>
-    <TableRowColumn className="table-row__column" style={{ width: '20%', borderBottom: '0px' }}>
-      {firstName} {lastName} {position}
+    <TableRowColumn
+      className="table-row__column"
+      style={{ width: '20%', height: '80px', fontSize: '1rem' }}
+    >
+      <strong>{firstName} {lastName}</strong>
+      <br />
+      {position}
     </TableRowColumn>
-    <TableRowColumn className="table-row__column" style={{ width: '20%' }}>
+    <TableRowColumn
+      className="table-row__column"
+      style={{ width: '20%', fontSize: '1rem' }}
+    >
       {phone}
     </TableRowColumn>
-    <TableRowColumn className="table-row__column" style={{ width: '25%' }}>
+    <TableRowColumn
+      className="table-row__column"
+      style={{ width: '25%', fontSize: '1rem' }}
+    >
       {email}
     </TableRowColumn>
-    <TableRowColumn className="table-row__column" style={{ width: '15%' }}>
+    <TableRowColumn
+      className="table-row__column"
+      style={{ width: '15%', fontSize: '1rem' }}
+    >
       {status}
     </TableRowColumn>
-    <TableRowColumn className="table-row__column" style={{ width: '12%' }}>
+    <TableRowColumn
+      className="table-row__column"
+      style={{ width: '10%', fontSize: '1rem' }}
+    >
       <FaEdit className="table-row__icon--edit" size={24} color="#616161" />
       <FaTrashO className="table-row__icon--trash" size={24} color="#616161" />
     </TableRowColumn>
