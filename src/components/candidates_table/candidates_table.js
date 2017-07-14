@@ -22,12 +22,13 @@ class CandidateTable extends Component {
     return store.candidates.map(candidate =>
       <CandidatesBodyRow
         key={candidate.id}
+        avatarUrl={candidate.data.avatar_url}
         firstName={candidate.data.firstName}
         lastName={candidate.data.lastName}
         position={candidate.data.position}
         phone={candidate.data.phone}
         email={candidate.data.email}
-        status={candidate.data.status}
+        status={candidate.interview.status}
       />
     );
   }

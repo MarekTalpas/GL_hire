@@ -2,56 +2,96 @@
 	"candidates": [{
 			"id": 1,
 			"data": {
-				"firstName": "Jackie",
-				"lastName": "Chan",
+				"firstName": "Jack",
+				"lastName": "Willis",
 				"phone": "111",
 				"email": "jackie@email.com",
 				"skype": "skype1",
-				"position": "PROJECT MANAGER"
+				"position": "PROJECT MANAGER",
+				"avatar_url": "../../../../assets/images/avatar1.png"
+			},
+			"interview": {
+				"dateTime": "2016-12-13T09:34",
+				"location": "KOSICE",
+				"room": "MATRIX",
+				"note": null,
+				"status": "CREATED"
 			}
 		},
 		{
 			"id": 2,
 			"data": {
-				"firstName": "Steven",
-				"lastName": "Seagal",
+				"firstName": "John",
+				"lastName": "Winston",
 				"phone": "222",
 				"email": "steven@email.com",
 				"skype": "skype2",
-				"position": "ARCHITECT"
+				"position": "ARCHITECT",
+				"avatar_url": "../../../../assets/images/avatar2.png"
+			},
+			"interview": {
+				"dateTime": "2016-12-13T09:34",
+				"location": "KOSICE",
+				"room": "MATRIX",
+				"note": null,
+				"status": "CREATED"
 			}
 		},
 		{
 			"id": 3,
 			"data": {
 				"firstName": "Jim",
-				"lastName": "Carrey",
+				"lastName": "Marlow",
 				"phone": "333",
 				"email": "jim@email.sk",
 				"skype": "skype3",
-				"position": "PROGRAMMER"
+				"position": "PROGRAMMER",
+				"avatar_url": "../../../../assets/images/avatar3.png"
+			},
+			"interview": {
+				"dateTime": "2016-12-13T09:34",
+				"location": "KOSICE",
+				"room": "MATRIX",
+				"note": null,
+				"status": "CREATED"
 			}
 		},
 		{
 			"id": 4,
 			"data": {
-				"firstName": "Hugh",
-				"lastName": "Laurie",
+				"firstName": "Peter",
+				"lastName": "Smith",
 				"phone": "444",
 				"email": "hugh@email.sk",
 				"skype": "skype4",
-				"position": "ORACLE SPECIALIST"
+				"position": "ORACLE SPECIALIST",
+				"avatar_url": "../../../../assets/images/avatar4.png"
+			},
+			"interview": {
+				"dateTime": "2016-12-13T09:34",
+				"location": "KOSICE",
+				"room": "MATRIX",
+				"note": null,
+				"status": "CREATED"
 			}
 		},
 		{
 			"id": 5,
 			"data": {
-				"firstName": "Tom",
-				"lastName": "Hanks",
+				"firstName": "Bob",
+				"lastName": "White",
 				"phone": "555",
 				"email": "email@email.sk",
 				"skype": "skype5",
-				"position": "TESTER"
+				"position": "TESTER",
+				"avatar_url": "../../../../assets/images/avatar5.png"
+			},
+			"interview": {
+				"dateTime": "2016-12-13T09:34",
+				"location": "KOSICE",
+				"room": "MATRIX",
+				"note": null,
+				"status": "CREATED"
 			}
 		}
 	]

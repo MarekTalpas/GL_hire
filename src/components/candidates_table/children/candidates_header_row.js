@@ -4,13 +4,16 @@ import {
   TableRow,
 } from 'material-ui/Table';
 
-const CandidatesHeader = () =>
+const CandidatesHeaderRow = () =>
     <TableRow>
-      <TableHeaderColumn>Name</TableHeaderColumn>
-      <TableHeaderColumn>Phone</TableHeaderColumn>
-      <TableHeaderColumn>Email</TableHeaderColumn>
-      <TableHeaderColumn>Status</TableHeaderColumn>
-      <TableHeaderColumn>Actions</TableHeaderColumn>
+      <TableHeaderColumn
+        style={{ width: '8%', 'border-bottom': '1px solid #fafafa' }}
+      />
+      <TableHeaderColumn style={{ width: '20%' }}>Name</TableHeaderColumn>
+      <TableHeaderColumn style={{ width: '20%' }}>Phone</TableHeaderColumn>
+      <TableHeaderColumn style={{ width: '25%' }}>Email</TableHeaderColumn>
+      <TableHeaderColumn style={{ width: '15%' }}>Status</TableHeaderColumn>
+      <TableHeaderColumn style={{ width: '12%' }}>Actions</TableHeaderColumn>
     </TableRow>;
 
-export default CandidatesHeader;
+export default CandidatesHeaderRow;
