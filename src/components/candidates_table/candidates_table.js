@@ -4,11 +4,12 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import {
   Table,
   TableBody,
+  TableHeader,
 } from 'material-ui/Table';
 
-import CandidatesHeader from './children/candidates_header';
+import CandidatesHeaderRow from './children/candidates_header_row';
 import store from '../store/store.json';
-import CandidatesRow from './children/candidates_row';
+import CandidatesBodyRow from './children/candidates_body_row';
 import './candidates_table.css';
 
 const tableStyle = {
@@ -17,9 +18,9 @@ const tableStyle = {
 };
 
 class CandidateTable extends Component {
-  renderRows() {
+  renderBodyRows() {
     return store.candidates.map(candidate =>
-      <CandidatesRow
+      <CandidatesBodyRow
         key={candidate.id}
         firstName={candidate.data.firstName}
         lastName={candidate.data.lastName}
@@ -35,9 +36,11 @@ class CandidateTable extends Component {
     return (
       <MuiThemeProvider>
         <Table style={tableStyle} className="candidates-table">
-          <CandidatesHeader />
+          <TableHeader className="candidates-table__header">
+            <CandidatesHeaderRow />
+          </TableHeader>
           <TableBody>
-            {this.renderRows()}
+            {this.renderBodyRows()}
           </TableBody>
         </Table>
       </MuiThemeProvider>
