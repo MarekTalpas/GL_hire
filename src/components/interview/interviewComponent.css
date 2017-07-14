@@ -1,5 +1,10 @@
-.mainIntContainer {
+.interviewContainer {
+  margin-left: calc(250px + 50px);
+  margin-top: 150px;
+  margin-right: 50px;
+}
+
+.interviewForms {
   display: flex;
   justify-content: center;
-  margin-left: 10%;
 }

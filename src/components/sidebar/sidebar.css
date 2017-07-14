@@ -8,7 +8,7 @@
   -webkit-box-shadow: 2px 0 2px 2px #BDBDBD;
   -moz-box-shadow: 2px 0 2px 2px #BDBDBD;
   box-shadow: 2px 0 2px 2px #BDBDBD;
-  z-index: 2;
+  z-index: 99;
 }
 
 .sidebar .logo {

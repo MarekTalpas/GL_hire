@@ -20,7 +20,7 @@ class CandidatePosition extends Component {
   render() {
     return (
       <MuiThemeProvider>
-        <SelectField 
+        <SelectField
           floatingLabelText='Choose position'
           value={this.state.value}
           onChange={this.handleChange}

@@ -14,9 +14,9 @@ const ButtonComponent = (props) => {
         label={buttonText}
         primary={true}
         style={style}
-      />  
+      />
     </MuiThemeProvider>
-  )
-}
+  );
+};
 
 export default ButtonComponent;
