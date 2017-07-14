@@ -42,7 +42,7 @@ class InterviewInfo extends Component {
           <InterviewLocation />
           <InterviewRoom />
           <InterviewPerson />
-        </List>         
+        </List>
       </MuiThemeProvider>
       </div>
     )

@@ -11,7 +11,7 @@ class InterviewComponent extends Component {
         <InterviewCandidate />
         <InterviewInfo />
       </div>
-    )
+    );
   }
 }
 

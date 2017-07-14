@@ -1,11 +1,12 @@
 .sidebar {
   width: 250px;
   background-color: #4DD0E1;
-  position: absolute;
+  position: fixed;
   height: 100%;
   top: 0;
   bottom: 0;
   -webkit-box-shadow: 2px 0 2px 2px #BDBDBD;
+  -moz-box-shadow: 2px 0 2px 2px #BDBDBD;
   box-shadow: 2px 0 2px 2px #BDBDBD;
   z-index: 2;
 }
