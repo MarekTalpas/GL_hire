@@ -5,11 +5,13 @@ import {
   Table,
   TableBody,
   TableHeader,
+  TableFooter,
 } from 'material-ui/Table';
 
 import CandidatesHeaderRow from './children/candidates_header_row';
 import store from '../store/store.json';
 import CandidatesBodyRow from './children/candidates_body_row';
+import CandidatesPagination from './children/candidates_pagination';
 import './candidates_table.css';
 
 const tableStyle = {
@@ -38,15 +40,22 @@ class CandidateTable extends Component {
       <MuiThemeProvider>
         <Table
           fixedHeader={false}
+          fixedFooter={false}
           style={tableStyle}
           className="candidates-table"
         >
           <TableHeader className="candidates-table__header">
             <CandidatesHeaderRow />
           </TableHeader>
-          <TableBody>
+          <TableBody className="candidates-table__body">
             {this.renderBodyRows()}
           </TableBody>
+          <TableFooter
+            className="candidates-table__footer"
+            style={{ width: '500px' }}
+          >
+            <CandidatesPagination total={10} display={5} current={1} />
+          </TableFooter>
         </Table>
       </MuiThemeProvider>
     );
