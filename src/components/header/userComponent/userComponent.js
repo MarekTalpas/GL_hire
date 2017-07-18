@@ -37,9 +37,8 @@ class UserComponent extends Component {
                   backgroundColor={indigo900}
                   size={30}
                   style={style}
-                >
-                  B
-                </Avatar>
+                  src={'../../../../assets/images/johny.png'}
+                />
               }
             >
               Johny Cash

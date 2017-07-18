@@ -1,0 +1,10 @@
+.intCandContainer {
+  width: 250px;
+  margin: 50px;
+  display: inline-block;
+  margin-right: 10%;
+}
+
+.candButton {
+  margin-top: 20px;
+}

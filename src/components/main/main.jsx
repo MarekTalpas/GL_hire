@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Sidebar from '../sidebar/sidebar';
 import HeaderComponent from '../header/headerComponent';
 
-class MainPageComponent extends Component {
+class Main extends Component {
   render() {
     return (
       <div>
@@ -13,4 +13,4 @@ class MainPageComponent extends Component {
   }
 }
 
-export default MainPageComponent;
+export default Main;

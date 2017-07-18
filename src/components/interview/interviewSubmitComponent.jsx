@@ -7,11 +7,10 @@ class InterviewSubmitComponent extends Component {
     return (
       <div className='submitContainer'>
         <div className='submitButtons'>
-        <ButtonComponent buttonText='cancel' />
-        <ButtonComponent
-          buttonText='save'
-          style={{ backgroundColor: 'red' }}/>
+          <ButtonComponent buttonText='cancel' />
+          <ButtonComponent buttonText='save' />
         </div>
+        <ButtonComponent buttonText='close interview' />
       </div>
     );
   }

@@ -1,10 +1,11 @@
 .interviewContainer {
-  margin-left: calc(250px + 50px);
+  left: 30%;
   margin-top: 150px;
-  margin-right: 50px;
+  position: absolute;
 }
 
 .interviewForms {
   display: flex;
+  flex-direction: row;
   justify-content: center;
 }

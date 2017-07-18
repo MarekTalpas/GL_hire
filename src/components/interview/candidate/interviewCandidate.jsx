@@ -6,10 +6,11 @@ import Subheader from 'material-ui/Subheader';
 import TextField from 'material-ui/TextField';
 import List from 'material-ui/List/List';
 import Divider from 'material-ui/Divider';
-import SelectField from 'material-ui/SelectField';
 import CandidatePosition from './candidatePosition';
 
 import ButtonComponent from '../../../common/buttonComponent';
+
+import './interviewCandidate.css';
 
 class InterviewCandidate extends Component {
 
@@ -25,16 +26,11 @@ class InterviewCandidate extends Component {
     }
 
   render() {
-    const style = {
-      width: 250,
-      margin: 50,
-    };
-
     return (
-      <div style={style}>
+      <div className='intCandContainer'>
         <MuiThemeProvider>
           <List>
-            <Subheader style={{paddingLeft: 0}}>Candidate</Subheader>
+            <Subheader style={{ paddingLeft: 0 }}>Candidate</Subheader>
             <Divider />
             {this.renderTextField('text', 'Name', 'This field is required', 'Name')}
             {this.renderTextField('text', 'Surname', 'This field is required', 'Surname')}
@@ -42,11 +38,13 @@ class InterviewCandidate extends Component {
             {this.renderTextField('text', 'Email', 'Incorrect format', 'Email')}
             {this.renderTextField('text', 'Skype', 'Incorrect format', 'Skype')}
             <CandidatePosition />
-            <ButtonComponent buttonText='attach cv' />
+            <div className='candButton'>
+              <ButtonComponent buttonText='attach cv' />
+            </div>
           </List>
         </MuiThemeProvider>
       </div>
-    )
+    );
   }
 }
 

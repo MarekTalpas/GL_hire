@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 import FaPlus from 'react-icons/lib/fa/plus';
 import FaArchive from 'react-icons/lib/fa/archive';
+import { Link } from 'react-router-dom';
 
 //import * as data from '../store/dataSidebar';
 
@@ -21,14 +22,20 @@ class Sidebar extends Component {
 
     return (
       <div className='sidebar'>
-        <img className='logo' src={logo} alt='logo here' />
-        <ul>
-          {/*{renderList(sidebarList)}*/}
-          <li>
-            <FaArchive className='sidebarIcon' /><span>my interviews</span>
-          </li>
-          <li><FaPlus className='sidebarIcon' /><span>new interviews</span></li>
-        </ul>
+        <img className='logo' src={logo} alt='logo here' />        
+          <ul>
+            {/*{renderList(sidebarList)}*/}
+            <li>
+              <Link to='/myInterviews'><FaArchive className='sidebarIcon' />
+                my interviews
+              </Link>
+            </li>
+            <li>
+              <Link to='/newInterviews'><FaPlus className='sidebarIcon' />
+                new interviews
+              </Link>
+            </li>
+          </ul>
       </div>
     );
   }
