@@ -13,6 +13,7 @@ import store from '../store/store.json';
 import CandidatesBodyRow from './children/candidates_body_row';
 import CandidatesPagination from './children/candidates_pagination';
 import './candidates_table.css';
+// import * as actions from '../../actions/index';
 
 const tableStyle = {
   width: 'calc(100% - 410px)',
