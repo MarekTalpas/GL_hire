@@ -1,15 +1,18 @@
 import axios from 'axios';
 import C from './constants';
+import { TOKEN } from '../../API/fetch';
 
-const CANDIDATES_URL = 'http://localhost:8081/api/interviews?limit=5?start=0';
+const CANDIDATES_URL = 'http://localhost:8090/api/interviews';
 
 export function fetchCandidates() {
-  const request = axios.get(CANDIDATES_URL);
+  const request = axios.get(CANDIDATES_URL, {
+    headers: { Authorization: `Bearer ${TOKEN}` }
+  });
 
   return (dispatch) => {
-    request.then((data) => {
-      console.log('data: ', data);
-      dispatch({ type: C.FECTH_CANDIDATES, payload: data });
+    request.then((candidates) => {
+      console.log('data: ', candidates.data);
+      dispatch({ type: C.FECTH_CANDIDATES, payload: candidates.data });
     }).catch(err => err);
   };
 }
