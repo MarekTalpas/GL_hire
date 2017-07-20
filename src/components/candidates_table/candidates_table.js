@@ -24,7 +24,7 @@ const tableStyle = {
 
 class CandidateTable extends Component {
   componentWillMount() {
-    this.props.fetchCandiddates();
+    this.props.fetchCandidates();
   }
   renderBodyRows() {
     return store.candidates.map(candidate =>
