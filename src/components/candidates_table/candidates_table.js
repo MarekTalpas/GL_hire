@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-
 import {
   Table,
   TableBody,
@@ -8,6 +9,7 @@ import {
   TableFooter,
 } from 'material-ui/Table';
 
+import { fetchCandidates } from '../../actions/index';
 import CandidatesHeaderRow from './children/candidates_header_row';
 import store from '../store/store.json';
 import CandidatesBodyRow from './children/candidates_body_row';
@@ -21,6 +23,9 @@ const tableStyle = {
 };
 
 class CandidateTable extends Component {
+  componentWillMount() {
+    this.props.fetchCandiddates();
+  }
   renderBodyRows() {
     return store.candidates.map(candidate =>
       <CandidatesBodyRow
@@ -63,4 +68,8 @@ class CandidateTable extends Component {
   }
 }
 
-export default CandidateTable;
+function mapDispacthToProps(dispatch) {
+  return bindActionCreators({ fetchCandidates }, dispatch);
+}
+
+export default connect(null, mapDispacthToProps)(CandidateTable);

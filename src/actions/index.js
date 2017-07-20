@@ -1,10 +1,10 @@
 import axios from 'axios';
 import C from './constants';
 
-const URL_CANDIDATES = 'http://localhost:8081/api/interviews?limit=5?start=0';
+const CANDIDATES_URL = 'http://localhost:8081/api/interviews?limit=5?start=0';
 
 export function fetchCandidates() {
-  const request = axios.get(URL_CANDIDATES);
+  const request = axios.get(CANDIDATES_URL);
 
   return (dispatch) => {
     request.then((data) => {
