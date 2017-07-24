@@ -8,12 +8,12 @@ import {
   TableHeader,
   TableFooter,
 } from 'material-ui/Table';
+import Pagination from 'material-ui-pagination';
 
 import { fetchCandidates } from '../../actions/index';
 import CandidatesHeaderRow from './children/candidates_header_row';
 import store from '../store/store.json';
 import CandidatesBodyRow from './children/candidates_body_row';
-import CandidatesPagination from './children/candidates_pagination';
 import './candidates_table.css';
 // import * as actions from '../../actions/index';
 import Modal from '../modal/modal';
@@ -42,10 +42,8 @@ class CandidateTable extends Component {
     );
   }
   render() {
-    console.log('store: ', store);
     return (
       <MuiThemeProvider>
-        <div>
           <Table
             fixedHeader={false}
             fixedFooter={false}
@@ -62,18 +60,22 @@ class CandidateTable extends Component {
               className="candidates-table__footer"
               style={{ width: '500px' }}
             >
-              <CandidatesPagination total={10} display={5} current={1} />
-            </TableFooter>
-          </Table>
-          <Modal />
-        </div>
+            <div className="candidates-table__pagination">
+              <Pagination
+                total={10}
+                current={1}
+                display={5}
+              />
+            </div>
+          </TableFooter>
+        </Table>
       </MuiThemeProvider>
     );
   }
 }
 
-function mapDispacthToProps(dispatch) {
+function mapDispatchToProps(dispatch) {
   return bindActionCreators({ fetchCandidates }, dispatch);
 }
 
-export default connect(null, mapDispacthToProps)(CandidateTable);
+export default connect(null, mapDispatchToProps)(CandidateTable);
