@@ -6,7 +6,6 @@ class HeaderComponent extends Component {
   render() {
     return (
       <div className='header'>
-        some component
         <div className='headerUser'>
           <UserComponent />
         </div>

@@ -16,6 +16,7 @@ import CandidatesBodyRow from './children/candidates_body_row';
 import CandidatesPagination from './children/candidates_pagination';
 import './candidates_table.css';
 // import * as actions from '../../actions/index';
+import Modal from '../modal/modal';
 
 const tableStyle = {
   width: 'calc(100% - 410px)',
@@ -24,7 +25,7 @@ const tableStyle = {
 
 class CandidateTable extends Component {
   componentWillMount() {
-    this.props.fetchCandiddates();
+    this.props.fetchCandidates();
   }
   renderBodyRows() {
     return store.candidates.map(candidate =>
@@ -44,25 +45,28 @@ class CandidateTable extends Component {
     console.log('store: ', store);
     return (
       <MuiThemeProvider>
-        <Table
-          fixedHeader={false}
-          fixedFooter={false}
-          style={tableStyle}
-          className="candidates-table"
-        >
-          <TableHeader className="candidates-table__header">
-            <CandidatesHeaderRow />
-          </TableHeader>
-          <TableBody className="candidates-table__body">
-            {this.renderBodyRows()}
-          </TableBody>
-          <TableFooter
-            className="candidates-table__footer"
-            style={{ width: '500px' }}
+        <div>
+          <Table
+            fixedHeader={false}
+            fixedFooter={false}
+            style={tableStyle}
+            className="candidates-table"
           >
-            <CandidatesPagination total={10} display={5} current={1} />
-          </TableFooter>
-        </Table>
+            <TableHeader className="candidates-table__header">
+              <CandidatesHeaderRow />
+            </TableHeader>
+            <TableBody className="candidates-table__body">
+              {this.renderBodyRows()}
+            </TableBody>
+            <TableFooter
+              className="candidates-table__footer"
+              style={{ width: '500px' }}
+            >
+              <CandidatesPagination total={10} display={5} current={1} />
+            </TableFooter>
+          </Table>
+          <Modal />
+        </div>
       </MuiThemeProvider>
     );
   }

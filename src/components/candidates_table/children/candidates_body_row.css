@@ -6,3 +6,8 @@
 .table-row__icon--trash {
   cursor: pointer;
 }
+
+.open-modal:hover {
+  cursor: pointer;
+  color: #9E9E9E;
+}

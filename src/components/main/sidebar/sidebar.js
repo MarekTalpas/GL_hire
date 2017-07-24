@@ -23,7 +23,7 @@ class Sidebar extends Component {
     return (
       <div className='sidebar'>
         <img className='logo' src={logo} alt='logo here' />        
-          <ul>
+          <ul className='sidebarList'>
             {/*{renderList(sidebarList)}*/}
             <li>
               <Link to='/myInterviews'><FaArchive className='sidebarIcon' />

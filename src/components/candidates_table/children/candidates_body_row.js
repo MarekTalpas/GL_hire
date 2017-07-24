@@ -29,7 +29,7 @@ const CandidatesRow = ({
 }: CandidateType) =>
   <TableRow className="table-row">
     <TableRowColumn
-      className="table-row__column"
+      className="table-row__column open-modal"
       style={{ width: '10%', borderBottom: '1px solid #fafafa' }}
     >
       <Avatar
@@ -40,7 +40,7 @@ const CandidatesRow = ({
       />
     </TableRowColumn>
     <TableRowColumn
-      className="table-row__column"
+      className="table-row__column open-modal"
       style={{ width: '20%', height: '80px', fontSize: '1rem' }}
     >
       <strong>{firstName} {lastName}</strong>

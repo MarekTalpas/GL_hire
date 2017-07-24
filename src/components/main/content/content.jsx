@@ -2,8 +2,8 @@ import React from 'react';
 import {
   Switch,
   Route } from 'react-router-dom';
-import InterviewComponent from '../interview/interviewComponent';
-import CandidatesTable from '../candidates_table/candidates_table';
+import InterviewComponent from '../../interview/interviewComponent';
+import CandidatesTable from '../../candidates_table/candidates_table';
 
 const Content = () => (   
   <Switch>
