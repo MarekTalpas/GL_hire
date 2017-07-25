@@ -1,0 +1,15 @@
+.leftPart {
+  width: 50%;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.rightPart {
+  width: 50%;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.modHover:hover {
+  cursor: pointer;
+}

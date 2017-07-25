@@ -24,11 +24,29 @@ const tableStyle = {
 };
 
 class CandidateTable extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      open: false,
+    };
+    this.handleOpen = this.handleOpen.bind(this);
+    this.handleClose = this.handleClose.bind(this);
+  }
+
   componentWillMount() {
     this.props.fetchCandidates();
   }
+
+  handleOpen() {
+    this.setState({ open: true });
+  }
+
+  handleClose() {
+    this.setState({ open: false });
+  }
+
   renderBodyRows() {
-    return store.candidates.map(candidate =>
+    return store.candidates.map(candidate => 
       <CandidatesBodyRow
         key={candidate.id}
         avatarUrl={candidate.data.avatar_url}
@@ -38,22 +56,29 @@ class CandidateTable extends Component {
         phone={candidate.data.phone}
         email={candidate.data.email}
         status={candidate.interview.status}
-      />
-    );
+        handleOpen={this.handleOpen}
+      />);
   }
   render() {
+    console.log(this.handleOpen);
     return (
       <MuiThemeProvider>
+      <div>
           <Table
             fixedHeader={false}
             fixedFooter={false}
             style={tableStyle}
             className="candidates-table"
           >
-            <TableHeader className="candidates-table__header">
+            <TableHeader
+              className="candidates-table__header"
+            >
               <CandidatesHeaderRow />
             </TableHeader>
-            <TableBody className="candidates-table__body">
+            <TableBody
+              className="candidates-table__body"
+              //handleOpen={this.props.handleOpen}
+            >
               {this.renderBodyRows()}
             </TableBody>
             <TableFooter
@@ -69,6 +94,12 @@ class CandidateTable extends Component {
             </div>
           </TableFooter>
         </Table>
+        <Modal 
+          handleClose={this.handleClose}
+          handleOpen={this.handleOpen}
+          open={this.state.open} 
+        />
+        </div>
       </MuiThemeProvider>
     );
   }

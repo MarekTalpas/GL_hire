@@ -1,0 +1,12 @@
+.closeModal {
+  float: right;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.after {
+  clear: both;
+}
+
+.closeModal:hover {
+  cursor: pointer;
+}

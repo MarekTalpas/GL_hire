@@ -18,6 +18,8 @@ type CandidateType = {
   status: string,
 }
 
+//const { handleOpen } = this.props;
+
 const CandidatesRow = ({
   avatarUrl,
   firstName,
@@ -29,7 +31,7 @@ const CandidatesRow = ({
 }: CandidateType) =>
   <TableRow className="table-row">
     <TableRowColumn
-      className="table-row__column open-modal"
+      className="table-row__column"
       style={{ width: '10%', borderBottom: '1px solid #fafafa' }}
     >
       <Avatar
@@ -42,6 +44,7 @@ const CandidatesRow = ({
     <TableRowColumn
       className="table-row__column open-modal"
       style={{ width: '20%', height: '80px', fontSize: '1rem' }}
+      //onClick={this.handleOpen}
     >
       <strong>{firstName} {lastName}</strong>
       <br />
