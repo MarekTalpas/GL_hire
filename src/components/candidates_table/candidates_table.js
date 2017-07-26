@@ -77,7 +77,6 @@ class CandidateTable extends Component {
             </TableHeader>
             <TableBody
               className="candidates-table__body"
-              //handleOpen={this.props.handleOpen}
             >
               {this.renderBodyRows()}
             </TableBody>
@@ -96,7 +95,6 @@ class CandidateTable extends Component {
         </Table>
         <Modal 
           handleClose={this.handleClose}
-          handleOpen={this.handleOpen}
           open={this.state.open} 
         />
         </div>

@@ -3,7 +3,6 @@ import injectTapEventPlugin from 'react-tap-event-plugin';
 import { authUser, fetchLocations } from '../../API/fetch';
 
 import Main from './main/main';
-//import Content from './content/content';
 
 injectTapEventPlugin();
 
@@ -17,7 +16,6 @@ export default class App extends Component {
     return (
       <div>
         <Main />
-        {/*<Content />*/}
       </div>
     );
   }

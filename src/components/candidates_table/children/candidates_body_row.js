@@ -18,8 +18,6 @@ type CandidateType = {
   status: string,
 }
 
-//const { handleOpen } = this.props;
-
 const CandidatesRow = ({
   avatarUrl,
   firstName,
@@ -28,6 +26,7 @@ const CandidatesRow = ({
   phone,
   email,
   status,
+  handleOpen
 }: CandidateType) =>
   <TableRow className="table-row">
     <TableRowColumn
@@ -44,9 +43,10 @@ const CandidatesRow = ({
     <TableRowColumn
       className="table-row__column open-modal"
       style={{ width: '20%', height: '80px', fontSize: '1rem' }}
-      //onClick={this.handleOpen}
+      onTouchTap={handleOpen}
     >
       <strong>{firstName} {lastName}</strong>
+      {console.log(handleOpen)}
       <br />
       {position}
     </TableRowColumn>

@@ -18,11 +18,12 @@ class LeftModalPart extends Component {
           <ListItem
             primaryText='name'
             secondaryText='information'
+            disabled={true}
             leftAvatar={<Avatar src='../../assets/images/johny.png' />}
           />  
-          <ListItem primaryText='phone' leftIcon={<FaPhone />} />
-          <ListItem primaryText='email' leftIcon={<FaEnvelope />} />
-          <ListItem primaryText='skype' leftIcon={<FaSkype />} />
+          <ListItem primaryText='phone' disabled={true} leftIcon={<FaPhone />} />
+          <ListItem primaryText='email' disabled={true} leftIcon={<FaEnvelope />} />
+          <ListItem primaryText='skype' disabled={true} leftIcon={<FaSkype />} />
         </List>
       </div>
     );
