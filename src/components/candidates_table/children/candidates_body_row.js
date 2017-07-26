@@ -46,7 +46,6 @@ const CandidatesRow = ({
       onTouchTap={handleOpen}
     >
       <strong>{firstName} {lastName}</strong>
-      {console.log(handleOpen)}
       <br />
       {position}
     </TableRowColumn>

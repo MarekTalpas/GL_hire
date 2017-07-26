@@ -28,6 +28,7 @@ class CandidateTable extends Component {
     super(props);
     this.state = {
       open: false,
+      //value: '',
     };
     this.handleOpen = this.handleOpen.bind(this);
     this.handleClose = this.handleClose.bind(this);
@@ -37,8 +38,11 @@ class CandidateTable extends Component {
     this.props.fetchCandidates();
   }
 
-  handleOpen() {
-    this.setState({ open: true });
+  handleOpen(/*value*/) {
+    this.setState({
+      open: true,
+      //value,
+    });
   }
 
   handleClose() {
@@ -60,7 +64,6 @@ class CandidateTable extends Component {
       />);
   }
   render() {
-    console.log(this.handleOpen);
     return (
       <MuiThemeProvider>
       <div>
@@ -95,7 +98,8 @@ class CandidateTable extends Component {
         </Table>
         <Modal 
           handleClose={this.handleClose}
-          open={this.state.open} 
+          open={this.state.open}
+          //value={this.state.value}
         />
         </div>
       </MuiThemeProvider>

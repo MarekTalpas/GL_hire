@@ -17,7 +17,7 @@ class Modal extends Component {
       <FaPencil
         className='modHover'
         size={16}
-        onTouchTap={this.props.handleClose}
+        onTouchTap={this.props.handleClick}
         style={{ marginLeft: '20', marginRight: '10' }}
       />,
     ];
@@ -37,7 +37,9 @@ class Modal extends Component {
           open={this.props.open}
         >
           <div className='leftPart'>
-            <LeftModalPart />
+            <LeftModalPart
+              //value={this.props.value}
+            />
           </div>
           <div className='rightPart'>
             <RightModalPart handleClose={this.props.handleClose} />

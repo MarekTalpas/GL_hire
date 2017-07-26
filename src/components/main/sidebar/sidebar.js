@@ -9,9 +9,9 @@ import { Link } from 'react-router-dom';
 import './sidebar.css';
 
 class Sidebar extends Component {
-  render() {
+  render() {    
     const logo = '../../../assets/images/global_hire.png';
-
+    
     //const sidebarList = data.DataSidebar.list;
 
     // const renderLiList = (name, index) =>
@@ -19,20 +19,28 @@ class Sidebar extends Component {
 
     // const renderList = (x) =>
     //   x.map((name, index) => renderLiList(name, index));
-
+   
     return (
       <div className='sidebar'>
         <img className='logo' src={logo} alt='logo here' />        
           <ul className='sidebarList'>
             {/*{renderList(sidebarList)}*/}
             <li>
-              <Link to='/myInterviews'><FaArchive className='sidebarIcon' />
-                my interviews
+              <Link
+                to='/myInterviews'
+                onClick={() => (this.props.handleClick('My Interviews'))}
+              >
+                <FaArchive className='sidebarIcon' />
+                  my interviews
               </Link>
             </li>
             <li>
-              <Link to='/newInterviews'><FaPlus className='sidebarIcon' />
-                new interviews
+              <Link
+                to='/newInterviews'
+                onClick={() => (this.props.handleClick('New Interviews'))}
+              >
+                <FaPlus className='sidebarIcon' />
+                  new interviews
               </Link>
             </li>
           </ul>

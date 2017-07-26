@@ -14,7 +14,8 @@ class LeftModalPart extends Component {
     return (
       <div className='leftModal'>
         <List>
-          <Subheader style={{ fontSize: '1.2em' }}>Candidate</Subheader>
+          <span />
+          <Subheader style={{ fontSize: '1.5em' }}>Candidate</Subheader>
           <ListItem
             primaryText='name'
             secondaryText='information'

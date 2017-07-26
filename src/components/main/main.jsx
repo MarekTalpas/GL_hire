@@ -5,13 +5,27 @@ import Content from './content/content';
 import './main.css';
 
 class Main extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      nameValue: '',
+    };
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick(value) {
+    this.setState({ nameValue: value });
+    }
+
   render() {
     return (
       <div className='mainContentContainer'>
         <div className='mainContainer'>
-          <Sidebar />       
+          <Sidebar
+            handleClick={this.handleClick}
+          />
         </div>
-        <HeaderComponent />
+        <HeaderComponent nameValue={this.state.nameValue} />
         <Content />
       </div>
     );

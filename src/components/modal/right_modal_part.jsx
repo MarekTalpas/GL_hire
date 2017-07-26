@@ -11,7 +11,7 @@ class RightModalPart extends Component {
   render() {
     const styles = {
       header: {
-        fontSize: '1.2em',
+        fontSize: '1.5em',
       },
       subheader: {
         fontSize: '0.8em',
