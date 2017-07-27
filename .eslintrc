@@ -6,5 +6,9 @@
   },
   "rules": {
       "strict": [2, "global"]
+  },
+  "globals": {
+    "document": true,
+    "window": true
   }
 }
