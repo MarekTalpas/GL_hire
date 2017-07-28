@@ -2,15 +2,17 @@ import React from 'react';
 import {
   Switch,
   Route } from 'react-router-dom';
+import LoginPage from '../../login_page/login_page';
 import InterviewComponent from '../../interview/interviewComponent';
 import CandidatesTable from '../../candidates_table/candidates_table';
 
-const Content = () => (   
+const Content = () => (
   <Switch>
     <Route exact path='/' />
+    <Route path='/login' component={LoginPage} />
     <Route path='/myInterviews' component={CandidatesTable} />
     <Route path='/newInterviews' component={InterviewComponent} />
-  </Switch>   
+  </Switch>
 );
 
 export default Content;

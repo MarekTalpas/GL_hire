@@ -21,16 +21,16 @@ export function fetchCandidates() {
   };
 }
 
-export function signinUser({ userName, password }) {
+export function signinUser({ username, password }) {
   return function (dispatch) {
-    axios.post(LOGIN_URL, { userName, password })
+    axios.post(LOGIN_URL, { username, password })
       .then(response => {
         dispatch({ type: C.AUTH_USER });
         localStorage.setItem('token', response.data.token);
         window.location.href = '/';
       })
       .catch(() => {
-        dispatch(authError('Bad Login Info'));
+        dispatch(authError('Invalid Username or Password'));
       });
   };
 }

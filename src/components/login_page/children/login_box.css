@@ -1,6 +1,6 @@
 .login-box {
   margin: auto;
-  position: absolute;
+  position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -20,7 +20,7 @@
 
 .login-box__btn {
   width: 120px;
-  margin-left: 20px;
+  margin-right: 20px;
 }
 
 .login-box__error {
