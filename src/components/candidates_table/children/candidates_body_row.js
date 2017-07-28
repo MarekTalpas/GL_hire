@@ -1,5 +1,6 @@
 // @flow
 import React from 'react';
+import { Link } from 'react-router-dom';
 import {
   TableRow,
   TableRowColumn,
@@ -26,7 +27,8 @@ const CandidatesRow = ({
   phone,
   email,
   status,
-  handleOpen
+  handleOpen,
+  handleClick
 }: CandidateType) =>
   <TableRow className="table-row">
     <TableRowColumn
@@ -71,7 +73,14 @@ const CandidatesRow = ({
       className="table-row__column"
       style={{ width: '10%', fontSize: '1rem' }}
     >
-      <FaEdit className="table-row__icon--edit" size={24} color="#616161" />
+      <Link
+        to='/newInterviews'
+        onTouchTap={() => (handleClick('Edit Interview'))}
+      >
+        <FaEdit
+          className="table-row__icon--edit" size={24} color="#616161"
+        />
+      </Link>
       <FaTrashO className="table-row__icon--trash" size={24} color="#616161" />
     </TableRowColumn>
   </TableRow>;
