@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Sidebar from './sidebar/sidebar';
 import HeaderComponent from './header/headerComponent';
-import Content from './content/content';
+import Router from './router/router';
 import './main.css';
 
 class Main extends Component {
@@ -26,7 +26,7 @@ class Main extends Component {
           />
         </div>
         <HeaderComponent nameValue={this.state.nameValue} />
-        <Content />
+        <Router handleClick={this.handleClick} />
       </div>
     );
   }

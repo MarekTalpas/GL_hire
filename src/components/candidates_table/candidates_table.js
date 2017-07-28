@@ -61,6 +61,7 @@ class CandidateTable extends Component {
         email={candidate.data.email}
         status={candidate.interview.status}
         handleOpen={this.handleOpen}
+        handleClick={this.props.handleClick}
       />);
   }
   render() {
@@ -99,7 +100,7 @@ class CandidateTable extends Component {
         <Modal 
           handleClose={this.handleClose}
           open={this.state.open}
-          //value={this.state.value}
+          handleClick={this.props.handleClick}
         />
         </div>
       </MuiThemeProvider>

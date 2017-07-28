@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import Dialog from 'material-ui/Dialog';
 import FaTrash from 'react-icons/lib/fa/trash';
 import FaPencil from 'react-icons/lib/fa/pencil';
@@ -14,12 +15,16 @@ class Modal extends Component {
         size={16}
         onTouchTap={this.props.handleClose}        
       />,
-      <FaPencil
-        className='modHover'
-        size={16}
-        onTouchTap={this.props.handleClick}
-        style={{ marginLeft: '20', marginRight: '10' }}
-      />,
+      <Link
+        to='/newInterviews'
+        onTouchTap={this.props.handleClick('Edit Interview')}
+      >
+        <FaPencil
+          className='modHover'
+          size={16}
+          style={{ marginLeft: '20', marginRight: '10' }}
+        />,
+      </Link>
     ];
 
     const style = {
@@ -37,9 +42,7 @@ class Modal extends Component {
           open={this.props.open}
         >
           <div className='leftPart'>
-            <LeftModalPart
-              //value={this.props.value}
-            />
+            <LeftModalPart />
           </div>
           <div className='rightPart'>
             <RightModalPart handleClose={this.props.handleClose} />
