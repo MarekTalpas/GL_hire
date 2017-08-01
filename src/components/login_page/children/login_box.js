@@ -1,6 +1,6 @@
 // @flow
-import React, { Component } from 'react';
-import { reduxForm } from 'redux-form';
+import React from 'react';
+import { Field, reduxForm } from 'redux-form';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import Paper from 'material-ui/Paper';
 import Subheader from 'material-ui/Subheader';
@@ -9,7 +9,36 @@ import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
 import { lightBlue400 } from 'material-ui/styles/colors';
 import * as actions from '../../../actions';
+import submitUser from './submit_user';
 import './login_box.css';
+
+// const handleFormSubmit = ({ username, password }) => {
+//
+// }
+
+const renderAlert = (errorMessage) => {
+  if (errorMessage) {
+    return (
+      <div className="login-box__error">
+        <strong>Oops!</strong> {errorMessage}
+      </div>
+    );
+  }
+};
+
+const validate = values => {
+  const errors = {};
+  const requiredFields = [
+    'username',
+    'password',
+  ];
+  requiredFields.forEach(field => {
+    if (!values[field]) {
+      errors[field] = 'Required';
+    }
+  });
+  return errors;
+};
 
 const textfieldsStyles = {
   underlineStyle: {
@@ -19,92 +48,95 @@ const textfieldsStyles = {
     color: lightBlue400,
   },
 };
-class LoginBox extends Component {
-  state = {
-    text: false,
-    password: false,
-  }
-  handleFormSubmit = ({ username, password }) => this.props.signinUser({ username, password });
-  handleInputChange = (ev) => {
-    if (ev.target.value.trim().length) {
-      this.setState({ [ev.target.type]: true });
-    }
-  }
-  renderAlert() {
-    if (this.props.errorMessage) {
-      return (
-        <div className="login-box__error">{this.props.errorMessage}
-          <br />Please try again.
-        </div>
-      );
-    }
-  }
-  renderTextField(
-    type: string, hintText: string, labelText: string, errorText: string, credentials) {
-    return (
-      <TextField
-        onChange={this.handleInputChange}
-        maxLength="25"
-        type={type}
-        hintText={hintText}
-        floatingLabelText={labelText}
-        errorText={this.state[type] ? '' : errorText}
-        fullWidth
-        underlineFocusStyle={textfieldsStyles.underlineStyle}
-        floatingLabelFocusStyle={textfieldsStyles.floatingLabelFocusStyle}
-        {...credentials}
-      />
-    );
-  }
-  render() {
-    const { handleSubmit, fields: { username, password } } = this.props;
-    const { boxWidth, bodyPadding, headerColor, bodyColor } = this.props;
-    const paperStyle = { width: boxWidth };
-    const headerStyle = { backgroundColor: headerColor };
-    const bodyStyle = { backgroundColor: bodyColor, padding: bodyPadding };
-    return (
-      <MuiThemeProvider>
-        <Paper className="login-box" style={paperStyle} zDepth={2}>
-          <header style={headerStyle} className="login-box__header">
-            <img
-              className="login-box__header-logo"
-              src="../../../../assets/images/hiregl_logo.png"
-              alt="application main logo"
+
+const renderTextField = ({
+  input,
+  label,
+  type,
+  meta: { touched, error },
+  ...custom
+}) =>
+  <TextField
+    hintText={label}
+    floatingLabelText={label}
+    type={type}
+    errorText={touched && error}
+    fullWidth
+    maxLength="25"
+    underlineFocusStyle={textfieldsStyles.underlineStyle}
+    floatingLabelFocusStyle={textfieldsStyles.floatingLabelFocusStyle}
+    {...input}
+    {...custom}
+  />;
+
+const LoginBox = ({
+  errorMessage,
+  handleSubmit,
+  // pristine,
+  reset,
+  // submitting,
+  boxWidth,
+  bodyPadding,
+  headerColor,
+  bodyColor
+}) => {
+  const paperStyle = { width: boxWidth };
+  const headerStyle = { backgroundColor: headerColor };
+  const bodyStyle = { backgroundColor: bodyColor, padding: bodyPadding };
+  return (
+    <MuiThemeProvider>
+      <Paper className="login-box" style={paperStyle} zDepth={2}>
+        <header style={headerStyle} className="login-box__header">
+          <img
+            className="login-box__header-logo"
+            src="../../../../assets/images/hiregl_logo.png"
+            alt="application main logo"
+          />
+        </header>
+        <form
+          onSubmit={handleSubmit}
+          className="login-box__body"
+          style={bodyStyle}
+        >
+          <Subheader>LOG IN</Subheader>
+          <Divider />
+          <Field
+            name="username"
+            component={renderTextField}
+            label="Username"
+            type="text"
+          />
+          <br />
+          <Field
+            name="password"
+            component={renderTextField}
+            label="Password"
+            type="password"
+          />
+          <br /><br />
+          <div className="error_btn_wrapper">
+            {renderAlert(errorMessage)}
+            <RaisedButton
+              className="login-box__btn"
+              label="LOG IN"
+              type="submit"
+              backgroundColor="#455A64"
+              labelColor="#E1F5FE"
+              onClick={reset}
+              // disabled={pristine || submitting}
             />
-          </header>
-          <form
-            onSubmit={handleSubmit(this.handleFormSubmit)}
-            className="login-box__body" style={bodyStyle}
-          >
-            <Subheader>LOG IN</Subheader>
-            <Divider />
-            {this.renderTextField('text',
-              'Enter Your Name', 'Username', 'username is required', { ...username })}
-            <br />
-            {this.renderTextField('password',
-              'Enter Your Password', 'Password', 'password is required', { ...password })}
-            <br /><br />
-            <div className="error_btn_wrapper">
-              {this.renderAlert()}
-              <RaisedButton
-                className="login-box__btn"
-                label="LOG IN"
-                backgroundColor="#455A64"
-                labelColor="#E1F5FE"
-              />
-            </div>
-          </form>
-        </Paper>
-      </MuiThemeProvider>
-    );
-  }
-}
+          </div>
+        </form>
+      </Paper>
+    </MuiThemeProvider>
+  );
+};
 
 function mapStateToProps(state) {
   return { errorMessage: state.auth.error };
 }
 
 export default reduxForm({
-  form: 'signin',
-  fields: ['username', 'password']
+  form: 'Signin',
+  validate,
 }, mapStateToProps, actions)(LoginBox);
