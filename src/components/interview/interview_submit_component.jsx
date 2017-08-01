@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import ButtonComponent from '../../common/buttonComponent';
-import './interviewSubmitComponent.css';
+import ButtonComponent from '../../common/button_component';
+import './interview_submit_component.css';
 
 class InterviewSubmitComponent extends Component {
   render() {
@@ -10,7 +10,10 @@ class InterviewSubmitComponent extends Component {
           <ButtonComponent buttonText='cancel' />
           <ButtonComponent buttonText='save' />
         </div>
-        <ButtonComponent buttonText='close interview' />
+        <ButtonComponent
+          //style={{ display: this.props.editFeatures ? 'block' : 'none' }}
+          buttonText='close interview'
+        />
       </div>
     );
   }

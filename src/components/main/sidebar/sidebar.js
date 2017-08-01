@@ -28,7 +28,7 @@ class Sidebar extends Component {
             <li>
               <Link
                 to='/myInterviews'
-                onClick={() => (this.props.handleClick('My Interviews'))}
+                onTouchTap={() => (this.props.handleClick('My Interviews'))}
               >
                 <FaArchive className='sidebarIcon' />
                   my interviews
@@ -37,7 +37,8 @@ class Sidebar extends Component {
             <li>
               <Link
                 to='/newInterviews'
-                onClick={() => (this.props.handleClick('New Interviews'))}
+                onTouchTap={() => (this.props.handleClick('New Interviews'))}
+                //editFeatures={this.props.editFeatures}
               >
                 <FaPlus className='sidebarIcon' />
                   new interviews

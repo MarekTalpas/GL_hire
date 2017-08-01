@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import InterviewCandidate from './candidate/interviewCandidate';
-import InterviewInfo from './interviewInfo/interviewInfo';
-import InterviewSubmitComponent from './interviewSubmitComponent';
+import InterviewInfo from './interview_info/interview_info';
+import InterviewSubmitComponent from './interview_submit_component';
 
-import './interviewComponent.css';
+import './interview_component.css';
 
 class InterviewComponent extends Component {
   render() {

@@ -13,7 +13,7 @@ import {
   indigo900,
 } from 'material-ui/styles/colors';
 
-import './userComponent.css';
+import './user_component.css';
 
 class UserComponent extends Component {
   render() {

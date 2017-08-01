@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import './headerComponent.css';
-import UserComponent from './userComponent/userComponent';
+import './header_component.css';
+import UserComponent from './user_component/user_component';
 
 class HeaderComponent extends Component {
   render() {

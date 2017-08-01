@@ -8,11 +8,11 @@ import Divider from 'material-ui/Divider';
 import DatePicker from 'material-ui/DatePicker';
 import TimePicker from 'material-ui/TimePicker';
 
-import InterviewLocation from './interviewLocation';
-import InterviewRoom from './interviewRoom';
-import InterviewPerson from './interviewPerson';
+import InterviewLocation from './interview_location';
+import InterviewRoom from './interview_room';
+import InterviewPerson from './interview_person';
 
-import './interviewInfo.css';
+import './interview_info.css';
 
 class InterviewInfo extends Component {
   render() {
@@ -40,6 +40,7 @@ class InterviewInfo extends Component {
               floatingLabelText='Notes'
               multiLine={true}
               rows={3}
+              //style={{ display: this.props.editFeatures ? 'block' : 'none' }}
             />
           </List>
         </MuiThemeProvider>

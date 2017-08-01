@@ -7,6 +7,7 @@ import CandidatesTable from '../../candidates_table/candidates_table';
 
 const Router = ({
   handleClick
+  //editFeatures
 }) => (
   <Switch>
     <Route exact path='/' />
@@ -14,7 +15,10 @@ const Router = ({
       path='/myInterviews'
       render={() => (<CandidatesTable handleClick={handleClick} />)}
     />
-    <Route path='/newInterviews' component={InterviewComponent} />
+    <Route
+      path='/newInterviews' component={InterviewComponent}
+      //render={() => (<InterviewComponent editFeatures={editFeatures} />)}
+    />
   </Switch>
 );
 

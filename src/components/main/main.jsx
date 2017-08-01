@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Sidebar from './sidebar/sidebar';
-import HeaderComponent from './header/headerComponent';
+import HeaderComponent from './header/header_component';
 import Router from './router/router';
 import './main.css';
 
@@ -9,13 +9,17 @@ class Main extends Component {
     super(props);
     this.state = {
       nameValue: '',
+      //editFeatures: true,
     };
     this.handleClick = this.handleClick.bind(this);
   }
 
   handleClick(value) {
-    this.setState({ nameValue: value });
-    }
+    this.setState({
+      nameValue: value,
+      //editFeatures: false, 
+    });
+  }
 
   render() {
     return (
@@ -23,10 +27,14 @@ class Main extends Component {
         <div className='mainContainer'>
           <Sidebar
             handleClick={this.handleClick}
+            //editFeatures={this.state.editFeatures}
           />
         </div>
         <HeaderComponent nameValue={this.state.nameValue} />
-        <Router handleClick={this.handleClick} />
+        <Router
+          handleClick={this.handleClick}
+          //editFeatures={this.state.editFeatures}
+        />
       </div>
     );
   }

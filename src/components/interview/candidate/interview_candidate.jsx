@@ -6,11 +6,11 @@ import Subheader from 'material-ui/Subheader';
 import TextField from 'material-ui/TextField';
 import List from 'material-ui/List/List';
 import Divider from 'material-ui/Divider';
-import CandidatePosition from './candidatePosition';
+import CandidatePosition from './candidate_position';
 
-import ButtonComponent from '../../../common/buttonComponent';
+import ButtonComponent from '../../../common/button_component';
 
-import './interviewCandidate.css';
+import './interview_candidate.css';
 
 class InterviewCandidate extends Component {
 

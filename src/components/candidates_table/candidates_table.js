@@ -28,7 +28,6 @@ class CandidateTable extends Component {
     super(props);
     this.state = {
       open: false,
-      //value: '',
     };
     this.handleOpen = this.handleOpen.bind(this);
     this.handleClose = this.handleClose.bind(this);
@@ -38,10 +37,9 @@ class CandidateTable extends Component {
     this.props.fetchCandidates();
   }
 
-  handleOpen(/*value*/) {
+  handleOpen() {
     this.setState({
       open: true,
-      //value,
     });
   }
 
