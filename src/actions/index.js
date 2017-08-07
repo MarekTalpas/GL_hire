@@ -1,5 +1,6 @@
 import axios from 'axios';
 import C from './constants';
+import { SubmissionError } from 'redux-form';
 import { TOKEN } from '../../API/fetch';
 
 const ROOT_URL = 'http://localhost:8090/api';
@@ -22,16 +23,28 @@ export function fetchCandidates() {
 }
 
 export function signinUser({ username, password }) {
-  return function (dispatch) {
-    axios.post(LOGIN_URL, { username, password })
-      .then(response => {
-        dispatch({ type: C.AUTH_USER });
-        localStorage.setItem('token', response.data.token);
-        window.location.href = '/';
-      })
-      .catch(() => {
-        dispatch(authError('Invalid Username or Password'));
-      });
+  if (username !== 'user1') {
+    throw new SubmissionError({
+      username: 'User does not exist',
+      _error: 'Login failed!'
+    });
+  } else if (password !== 'secret') {
+    throw new SubmissionError({
+      password: 'Wrong password',
+      _error: 'Login failed!'
+    });
+  } else {
+    return (dispatch) => {
+      axios.post(LOGIN_URL, { username, password })
+        .then(response => {
+          dispatch({ type: C.AUTH_USER });
+          localStorage.setItem('token', response.data.token);
+          window.location.href = '/';
+        })
+        .catch(() => {
+          dispatch(authError('Invalid Username or Password'));
+        });
+    }
   };
 }
 

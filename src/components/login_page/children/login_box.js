@@ -9,12 +9,8 @@ import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
 import { lightBlue400 } from 'material-ui/styles/colors';
 import * as actions from '../../../actions';
-import submitUser from './submit_user';
+import { signinUser } from '../../../actions';
 import './login_box.css';
-
-// const handleFormSubmit = ({ username, password }) => {
-//
-// }
 
 const renderAlert = (errorMessage) => {
   if (errorMessage) {
@@ -72,6 +68,9 @@ const renderTextField = ({
 const LoginBox = ({
   errorMessage,
   handleSubmit,
+  // fields: { username, password },
+  // signinUser,
+  // fields: { username, password },
   // pristine,
   reset,
   // submitting,
@@ -94,7 +93,7 @@ const LoginBox = ({
           />
         </header>
         <form
-          onSubmit={handleSubmit}
+          onSubmit={handleSubmit(signinUser)}
           className="login-box__body"
           style={bodyStyle}
         >
@@ -122,7 +121,7 @@ const LoginBox = ({
               type="submit"
               backgroundColor="#455A64"
               labelColor="#E1F5FE"
-              onClick={reset}
+              // onClick={reset}
               // disabled={pristine || submitting}
             />
           </div>
@@ -138,5 +137,6 @@ function mapStateToProps(state) {
 
 export default reduxForm({
   form: 'Signin',
+  // fields: ['username', 'password'],
   validate,
 }, mapStateToProps, actions)(LoginBox);
